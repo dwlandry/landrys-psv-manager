@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="D:\Users\dlandry\source\repos\landrys-psv-manager\landrys_psv_manager.Module\BusinessObjects\PSV\PSV.cs" company="David W. Landry III">
+// <copyright file="D:\Users\dlandry\Source\Repos\landrys-psv-manager\landrys_psv_manager.Module\BusinessObjects\PSV\PSV.cs" company="David W. Landry III">
 //     Author: _**David Landry**_
 //     *Copyright (c) David W. Landry III. All rights reserved.*
 // </copyright>
@@ -31,6 +31,10 @@ namespace landrys_psv_manager.Module.BusinessObjects.PSV
         public override void AfterConstruction() => base.AfterConstruction();
 
 
+        bool hasProcessCalc;
+        bool hasSpecSheet;
+        string remarks;
+        string drawingRF;
         DateTime dateNextPMDue;
         PSVBasisForInterval intervalBasis;
         int pMInterval;
@@ -107,6 +111,8 @@ namespace landrys_psv_manager.Module.BusinessObjects.PSV
         public string Service { get => service; set => SetPropertyValue(nameof(Service), ref service, value); }
 
         [Association("Plant-PSVs")]
+        [VisibleInListView(false)]
+        [DataSourceCriteria("Unit.Oid = '@This.Unit.Oid'")]
         public Plant Plant { get => plant; set => SetPropertyValue(nameof(Plant), ref plant, value); }
 
         [XafDisplayName("Field ID Assigned")]
@@ -136,6 +142,9 @@ namespace landrys_psv_manager.Module.BusinessObjects.PSV
         [Size(SizeAttribute.DefaultStringMappingFieldSize)]
         [VisibleInListView(false)]
         public string SerialNumber { get => serialNumber; set => SetPropertyValue(nameof(SerialNumber), ref serialNumber, value); }
+
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string DrawingRF { get => drawingRF; set => SetPropertyValue(nameof(DrawingRF), ref drawingRF, value); }
 
         [VisibleInListView(false)]
         public PSVSeatType SeatType { get => seatType; set => SetPropertyValue(nameof(SeatType), ref seatType, value); }
@@ -321,6 +330,13 @@ namespace landrys_psv_manager.Module.BusinessObjects.PSV
         [XafDisplayName("PM Due")]
         public DateTime DateNextPMDue { get => dateNextPMDue; set => SetPropertyValue(nameof(DateNextPMDue), ref dateNextPMDue, value); }
 
+        [Size(500)]
+        public string Remarks { get => remarks; set => SetPropertyValue(nameof(Remarks), ref remarks, value); }
 
+        [CaptionsForBoolValues("Yes", "No")]
+        public bool HasSpecSheet { get => hasSpecSheet; set => SetPropertyValue(nameof(HasSpecSheet), ref hasSpecSheet, value); }
+
+        [CaptionsForBoolValues("Yes", "No")]
+        public bool HasProcessCalc { get => hasProcessCalc; set => SetPropertyValue(nameof(HasProcessCalc), ref hasProcessCalc, value); }
     }
 }

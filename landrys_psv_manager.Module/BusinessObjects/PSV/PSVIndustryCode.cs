@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="D:\Users\dlandry\source\repos\landrys-psv-manager\landrys_psv_manager.Module\BusinessObjects\PSV\PSVIndustryCode.cs" company="David W. Landry III">
+// <copyright file="D:\Users\dlandry\Source\Repos\landrys-psv-manager\landrys_psv_manager.Module\BusinessObjects\PSV\PSVIndustryCode.cs" company="David W. Landry III">
 //     Author: _**David Landry**_
 //     *Copyright (c) David W. Landry III. All rights reserved.*
 // </copyright>
@@ -24,7 +24,7 @@ namespace landrys_psv_manager.Module.BusinessObjects.PSV
     [DefaultProperty(nameof(Name))]
     [NavigationItem("Lookup Lists")]
     [XafDisplayName("PSV Industry Code")]
-    public class PSVIndustryCode : BaseObject
+    public class PSVIndustryCode : XPObject
     {
         public PSVIndustryCode(Session session) : base(session) { }
         public override void AfterConstruction() => base.AfterConstruction();

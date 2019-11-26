@@ -46,7 +46,7 @@
             // progressBarControl
             // 
             this.progressBarControl.EditValue = 0;
-            this.progressBarControl.Location = new System.Drawing.Point(74, 271);
+            this.progressBarControl.Location = new System.Drawing.Point(74, 257);
             this.progressBarControl.Name = "progressBarControl";
             this.progressBarControl.Properties.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.progressBarControl.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
@@ -70,7 +70,7 @@
             // 
             // labelStatus
             // 
-            this.labelStatus.Location = new System.Drawing.Point(75, 253);
+            this.labelStatus.Location = new System.Drawing.Point(74, 238);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(50, 13);
             this.labelStatus.TabIndex = 7;
@@ -93,24 +93,25 @@
             // peLogo
             // 
             this.peLogo.EditValue = ((object)(resources.GetObject("peLogo.EditValue")));
-            this.peLogo.Location = new System.Drawing.Point(400, 328);
+            this.peLogo.Location = new System.Drawing.Point(336, 279);
             this.peLogo.Name = "peLogo";
             this.peLogo.Properties.AllowFocused = false;
             this.peLogo.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.peLogo.Properties.Appearance.Options.UseBackColor = true;
             this.peLogo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.peLogo.Properties.ShowMenu = false;
-            this.peLogo.Size = new System.Drawing.Size(70, 20);
+            this.peLogo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.peLogo.Size = new System.Drawing.Size(144, 69);
             this.peLogo.TabIndex = 8;
             // 
             // pcApplicationName
             // 
-            this.pcApplicationName.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(114)))), ((int)(((byte)(0)))));
+            this.pcApplicationName.Appearance.BackColor = System.Drawing.Color.Navy;
             this.pcApplicationName.Appearance.Options.UseBackColor = true;
             this.pcApplicationName.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pcApplicationName.Controls.Add(this.labelSubtitle);
             this.pcApplicationName.Controls.Add(this.labelApplicationName);
-			this.pcApplicationName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pcApplicationName.Dock = System.Windows.Forms.DockStyle.Top;
             this.pcApplicationName.Location = new System.Drawing.Point(1, 1);
             this.pcApplicationName.LookAndFeel.UseDefaultLookAndFeel = false;
             this.pcApplicationName.Name = "pcApplicationName";
@@ -123,11 +124,11 @@
             this.labelSubtitle.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(188)))));
             this.labelSubtitle.Appearance.Options.UseFont = true;
             this.labelSubtitle.Appearance.Options.UseForeColor = true;
-            this.labelSubtitle.Location = new System.Drawing.Point(222, 131);
+            this.labelSubtitle.Location = new System.Drawing.Point(136, 131);
             this.labelSubtitle.Name = "labelSubtitle";
-            this.labelSubtitle.Size = new System.Drawing.Size(64, 25);
+            this.labelSubtitle.Size = new System.Drawing.Size(267, 25);
             this.labelSubtitle.TabIndex = 1;
-            this.labelSubtitle.Text = "Subtitle";
+            this.labelSubtitle.Text = "Provided by ReCon Engineering";
             // 
             // labelApplicationName
             // 
@@ -135,11 +136,11 @@
             this.labelApplicationName.Appearance.ForeColor = System.Drawing.SystemColors.Window;
             this.labelApplicationName.Appearance.Options.UseFont = true;
             this.labelApplicationName.Appearance.Options.UseForeColor = true;
-            this.labelApplicationName.Location = new System.Drawing.Point(123, 84);
+            this.labelApplicationName.Location = new System.Drawing.Point(158, 78);
             this.labelApplicationName.Name = "labelApplicationName";
-            this.labelApplicationName.Size = new System.Drawing.Size(278, 47);
+            this.labelApplicationName.Size = new System.Drawing.Size(209, 47);
             this.labelApplicationName.TabIndex = 0;
-            this.labelApplicationName.Text = "Application Name";
+            this.labelApplicationName.Text = "PSV Manager";
             // 
             // XafSplashScreen
             // 

@@ -1,8 +1,274 @@
-﻿<?xml version="1.0" ?>
-<Application Title="landrys-psv-manager">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="PSV Manager" Company="ReCon Engineering" Copyright="Copyright (C) 2019 {0:Company} ALL RIGHTS RESERVED" Logo="ReCon Logo" Description="Manage site PSV data, calcs, maintenance, records and images.">
+  <BOModel>
+    <Class Name="landrys_psv_manager.Module.BusinessObjects.PSV.PSV" DefaultDetailView="PSV_DetailView_Variants" />
+  </BOModel>
+  <NavigationItems NavigationStyle="TreeList" DefaultChildItemsDisplayStyle="List">
+    <Items>
+      <Item Id="PSV's" Index="0" />
+      <Item Id="Lookup Lists" Index="1" />
+      <Item Id="Site Info" Index="2" />
+    </Items>
+  </NavigationItems>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="19.2.4.0" IsNewNode="True" />
+  </SchemaModules>
   <Views>
+    <DetailView Id="PSV_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100" Index="0">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="92.729306487695752">
+            <LayoutGroup Id="PSV" RelativeSize="95.657418576598317">
+              <LayoutGroup Id="PSV_col1" RelativeSize="50">
+                <LayoutGroup Id="Identification" Caption="Identification" Index="0" Direction="Horizontal" IsNewNode="True">
+                  <LayoutItem Id="TagNumber" Index="1" ViewItem="TagNumber" RelativeSize="4.2105263157894735" ShowCaption="" IsNewNode="True" />
+                  <LayoutItem Id="FunctionalLocation" Index="3" ViewItem="FunctionalLocation" RelativeSize="3.1578947368421053" ShowCaption="" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Service" RelativeSize="3.1578947368421053" Index="1" />
+                <LayoutItem Id="TagNumber" RelativeSize="4.2105263157894735" Index="1" Removed="True" />
+                <LayoutGroup Id="Location" Index="2" Direction="Horizontal" IsNewNode="True">
+                  <LayoutItem Id="Unit" Index="3" ViewItem="Unit" RelativeSize="3.1578947368421053" ShowCaption="" IsNewNode="True" />
+                  <LayoutItem Id="Plant" Index="4" ViewItem="Plant" RelativeSize="3.1578947368421053" ShowCaption="" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="FunctionalLocation" RelativeSize="3.1578947368421053" Index="3" Removed="True" />
+                <LayoutItem Id="Unit" RelativeSize="3.1578947368421053" Index="3" Removed="True" />
+                <LayoutItem Id="Plant" RelativeSize="3.1578947368421053" Index="4" Removed="True" />
+                <LayoutItem Id="StockNumber" RelativeSize="3.1578947368421053" Index="5" Removed="True" />
+                <LayoutItem Id="CriticalItem" RelativeSize="3.1578947368421053" Index="6" Removed="True" />
+                <LayoutItem Id="Manufacturer" RelativeSize="3.1578947368421053" Index="7" />
+                <LayoutItem Id="Model" RelativeSize="3.1578947368421053" Index="8" />
+                <LayoutItem Id="SerialNumber" RelativeSize="3.1578947368421053" Index="9" />
+                <LayoutItem Id="DrawingRF" RelativeSize="3.1578947368421053" Index="10" Removed="True" />
+                <LayoutItem Id="ACCOther" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="BASOther" RelativeSize="4.2105263157894735" Removed="True" />
+                <LayoutItem Id="Bellows" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="Bonnet" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="BonnetStuds" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="Code" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="Connection" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="FieldIDAssigned" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="Fire" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="GAG" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="GuideRing" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="InstrumentArea" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="Lever" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="Material" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="Nozzle" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="SeatDisc" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="SeatType" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="Size" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="Spring" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="TrimOther" RelativeSize="3.1578947368421053" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="PSV_col2" RelativeSize="50">
+                <LayoutItem Id="CriticalItem" Index="0" ViewItem="CriticalItem" ShowCaption="" RelativeSize="3.1578947368421053" IsNewNode="True" />
+                <LayoutItem Id="RequiredArea" Index="0" RelativeSize="4.2105263157894735" Removed="True" />
+                <LayoutItem Id="RequiredCapacity" Index="0" RelativeSize="4.2105263157894735" Removed="True" />
+                <LayoutItem Id="ValveArea" Index="0" RelativeSize="4.2105263157894735" Removed="True" />
+                <LayoutItem Id="ValveCapacity" Index="0" RelativeSize="4.2105263157894735" Removed="True" />
+                <LayoutItem Id="SGorMW" Index="1" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="StockNumber" Index="1" ViewItem="StockNumber" ShowCaption="" RelativeSize="3.1578947368421053" IsNewNode="True" />
+                <LayoutItem Id="DateLastPMDone" Index="2" RelativeSize="3.1578947368421053" />
+                <LayoutItem Id="Viscosity" Index="2" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="LastWorkOrderNumber" Index="3" RelativeSize="3.1578947368421053" />
+                <LayoutItem Id="SpecificHeatRatio" Index="3" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="Compressibility" Index="4" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="PMInterval" Index="4" RelativeSize="3.1578947368421053" />
+                <LayoutItem Id="IntervalBasis" Index="5" RelativeSize="3.1578947368421053" />
+                <LayoutItem Id="SteamQuality" Index="5" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="DateNextPMDue" Index="6" RelativeSize="3.1578947368421053" />
+                <LayoutItem Id="PercentFlashing" Index="6" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="LatentHeatVap" Index="7" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="VaporPressure" Index="8" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="MaxBlowdown" Index="9" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="MinReseat" Index="10" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="ValveCoefficient" Index="11" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="NormalPressure" Index="12" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="SpringSet" Index="13" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="NormalTemperature" Index="14" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="ReliefTemperature" Index="15" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="ConBackPressure" Index="16" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="DevBackPressure" Index="17" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="OverPressure" Index="18" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="HasSpecSheet" Index="24" RelativeSize="3.1578947368421053" Removed="True" />
+                <LayoutItem Id="HasProcessCalc" Index="25" RelativeSize="20" Removed="True" />
+                <LayoutItem Id="Fluid" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" RelativeSize="4.3425814234016888" Removed="True">
+              <LayoutItem Id="Oid" RelativeSize="100" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="7.27069351230425" Removed="True">
+            <LayoutItem Id="Remarks" RelativeSize="100" />
+          </LayoutGroup>
+          <TabbedGroup Id="TabbedGroup" IsNewNode="True">
+            <LayoutGroup Id="RemarksTab" Index="0" ShowCaption="True" RelativeSize="7.27069351230425" IsNewNode="True">
+              <LayoutItem Id="Remarks" ViewItem="Remarks" ShowCaption="False" RelativeSize="100" Index="0" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Calcs" Index="1" IsNewNode="True" />
+            <LayoutGroup Id="SizingScenarios" Caption="Sizing Scenarios" Index="2" IsNewNode="True" />
+            <LayoutGroup Id="Maintenance" Index="3" Caption="Maintenance Records" IsNewNode="True" />
+            <LayoutGroup Id="Pictures" Index="4" IsNewNode="True" />
+            <LayoutGroup Id="Reference Drawings" IsNewNode="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="PSV_DetailView_Variants" ClassName="landrys_psv_manager.Module.BusinessObjects.PSV.PSV" IsNewNode="True">
+      <Variants Current="Default" IsNewNode="True">
+        <Variant Id="Default" ViewID="PSV_DetailView" Caption="Default" IsNewNode="True" />
+        <Variant Id="Spec Details" Caption="Spec Details" ViewID="PSV_DetailViewVariant_SpecDetails" IsNewNode="True" />
+      </Variants>
+    </DetailView>
+    <DetailView Id="PSV_DetailViewVariant_SpecDetails" ClassName="landrys_psv_manager.Module.BusinessObjects.PSV.PSV" IsNewNode="True">
+      <Items IsNewNode="True">
+        <PropertyEditor Id="ACCOther" PropertyName="ACCOther" IsNewNode="True" />
+        <PropertyEditor Id="BASOther" PropertyName="BASOther" IsNewNode="True" />
+        <PropertyEditor Id="Bellows" PropertyName="Bellows" IsNewNode="True" />
+        <PropertyEditor Id="Bonnet" PropertyName="Bonnet" IsNewNode="True" />
+        <PropertyEditor Id="BonnetStuds" PropertyName="BonnetStuds" IsNewNode="True" />
+        <PropertyEditor Id="Code" PropertyName="Code" IsNewNode="True" />
+        <PropertyEditor Id="Compressibility" PropertyName="Compressibility" IsNewNode="True" />
+        <PropertyEditor Id="ConBackPressure" PropertyName="ConBackPressure" IsNewNode="True" />
+        <PropertyEditor Id="Connection" PropertyName="Connection" IsNewNode="True" />
+        <PropertyEditor Id="CriticalItem" PropertyName="CriticalItem" IsNewNode="True" />
+        <PropertyEditor Id="DateLastPMDone" PropertyName="DateLastPMDone" IsNewNode="True" />
+        <PropertyEditor Id="DateNextPMDue" PropertyName="DateNextPMDue" IsNewNode="True" />
+        <PropertyEditor Id="DevBackPressure" PropertyName="DevBackPressure" IsNewNode="True" />
+        <PropertyEditor Id="DrawingRF" PropertyName="DrawingRF" IsNewNode="True" />
+        <PropertyEditor Id="FieldIDAssigned" PropertyName="FieldIDAssigned" IsNewNode="True" />
+        <PropertyEditor Id="Fire" PropertyName="Fire" IsNewNode="True" />
+        <PropertyEditor Id="Fluid" PropertyName="Fluid" IsNewNode="True" />
+        <PropertyEditor Id="FunctionalLocation" PropertyName="FunctionalLocation" IsNewNode="True" />
+        <PropertyEditor Id="GAG" PropertyName="GAG" IsNewNode="True" />
+        <PropertyEditor Id="GuideRing" PropertyName="GuideRing" IsNewNode="True" />
+        <PropertyEditor Id="HasProcessCalc" PropertyName="HasProcessCalc" IsNewNode="True" />
+        <PropertyEditor Id="HasSpecSheet" PropertyName="HasSpecSheet" IsNewNode="True" />
+        <PropertyEditor Id="InstrumentArea" PropertyName="InstrumentArea" IsNewNode="True" />
+        <PropertyEditor Id="IntervalBasis" PropertyName="IntervalBasis" IsNewNode="True" />
+        <PropertyEditor Id="LastWorkOrderNumber" PropertyName="LastWorkOrderNumber" IsNewNode="True" />
+        <PropertyEditor Id="LatentHeatVap" PropertyName="LatentHeatVap" IsNewNode="True" />
+        <PropertyEditor Id="Lever" PropertyName="Lever" IsNewNode="True" />
+        <PropertyEditor Id="Manufacturer" PropertyName="Manufacturer" IsNewNode="True" />
+        <PropertyEditor Id="Material" PropertyName="Material" IsNewNode="True" />
+        <PropertyEditor Id="MaxBlowdown" PropertyName="MaxBlowdown" IsNewNode="True" />
+        <PropertyEditor Id="MinReseat" PropertyName="MinReseat" IsNewNode="True" />
+        <PropertyEditor Id="Model" PropertyName="Model" IsNewNode="True" />
+        <PropertyEditor Id="NormalPressure" PropertyName="NormalPressure" IsNewNode="True" />
+        <PropertyEditor Id="NormalTemperature" PropertyName="NormalTemperature" IsNewNode="True" />
+        <PropertyEditor Id="Nozzle" PropertyName="Nozzle" IsNewNode="True" />
+        <PropertyEditor Id="Oid" PropertyName="Oid" IsNewNode="True" />
+        <PropertyEditor Id="OverPressure" PropertyName="OverPressure" IsNewNode="True" />
+        <PropertyEditor Id="PercentFlashing" PropertyName="PercentFlashing" IsNewNode="True" />
+        <PropertyEditor Id="Plant" PropertyName="Plant" IsNewNode="True" />
+        <PropertyEditor Id="PMInterval" PropertyName="PMInterval" IsNewNode="True" />
+        <PropertyEditor Id="ReliefTemperature" PropertyName="ReliefTemperature" IsNewNode="True" />
+        <PropertyEditor Id="Remarks" PropertyName="Remarks" IsNewNode="True" />
+        <PropertyEditor Id="RequiredArea" PropertyName="RequiredArea" IsNewNode="True" />
+        <PropertyEditor Id="RequiredCapacity" PropertyName="RequiredCapacity" IsNewNode="True" />
+        <PropertyEditor Id="SeatDisc" PropertyName="SeatDisc" IsNewNode="True" />
+        <PropertyEditor Id="SeatType" PropertyName="SeatType" IsNewNode="True" />
+        <PropertyEditor Id="SerialNumber" PropertyName="SerialNumber" IsNewNode="True" />
+        <PropertyEditor Id="Service" PropertyName="Service" IsNewNode="True" />
+        <PropertyEditor Id="SGorMW" PropertyName="SGorMW" IsNewNode="True" />
+        <PropertyEditor Id="Size" PropertyName="Size" IsNewNode="True" />
+        <PropertyEditor Id="SpecificHeatRatio" PropertyName="SpecificHeatRatio" IsNewNode="True" />
+        <PropertyEditor Id="Spring" PropertyName="Spring" IsNewNode="True" />
+        <PropertyEditor Id="SpringSet" PropertyName="SpringSet" IsNewNode="True" />
+        <PropertyEditor Id="SteamQuality" PropertyName="SteamQuality" IsNewNode="True" />
+        <PropertyEditor Id="StockNumber" PropertyName="StockNumber" IsNewNode="True" />
+        <PropertyEditor Id="TagNumber" PropertyName="TagNumber" IsNewNode="True" />
+        <PropertyEditor Id="TrimOther" PropertyName="TrimOther" IsNewNode="True" />
+        <PropertyEditor Id="Unit" PropertyName="Unit" IsNewNode="True" />
+        <PropertyEditor Id="ValveArea" PropertyName="ValveArea" IsNewNode="True" />
+        <PropertyEditor Id="ValveCapacity" PropertyName="ValveCapacity" IsNewNode="True" />
+        <PropertyEditor Id="ValveCoefficient" PropertyName="ValveCoefficient" IsNewNode="True" />
+        <PropertyEditor Id="VaporPressure" PropertyName="VaporPressure" IsNewNode="True" />
+        <PropertyEditor Id="Viscosity" PropertyName="Viscosity" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" IsNewNode="True">
+            <LayoutGroup Id="PSV" Index="0" Direction="Horizontal" ShowCaption="True" IsNewNode="True">
+              <LayoutGroup Id="PSV_col1" Index="0" ShowCaption="False" IsNewNode="True">
+                <LayoutItem Id="TagNumber" ViewItem="TagNumber" Index="0" IsNewNode="True" />
+                <LayoutItem Id="Unit" ViewItem="Unit" Index="1" IsNewNode="True" />
+                <LayoutItem Id="InstrumentArea" ViewItem="InstrumentArea" Index="2" IsNewNode="True" />
+                <LayoutItem Id="Service" ViewItem="Service" Index="3" IsNewNode="True" />
+                <LayoutItem Id="Plant" ViewItem="Plant" Index="4" IsNewNode="True" />
+                <LayoutItem Id="FieldIDAssigned" ViewItem="FieldIDAssigned" Index="5" IsNewNode="True" />
+                <LayoutItem Id="FunctionalLocation" ViewItem="FunctionalLocation" Index="6" IsNewNode="True" />
+                <LayoutItem Id="StockNumber" ViewItem="StockNumber" Index="7" IsNewNode="True" />
+                <LayoutItem Id="CriticalItem" ViewItem="CriticalItem" Index="8" IsNewNode="True" />
+                <LayoutItem Id="Manufacturer" ViewItem="Manufacturer" Index="9" IsNewNode="True" />
+                <LayoutItem Id="Model" ViewItem="Model" Index="10" IsNewNode="True" />
+                <LayoutItem Id="SerialNumber" ViewItem="SerialNumber" Index="11" IsNewNode="True" />
+                <LayoutItem Id="DrawingRF" ViewItem="DrawingRF" Index="12" IsNewNode="True" />
+                <LayoutItem Id="SeatType" ViewItem="SeatType" Index="13" IsNewNode="True" />
+                <LayoutItem Id="Bonnet" ViewItem="Bonnet" Index="14" IsNewNode="True" />
+                <LayoutItem Id="BonnetStuds" ViewItem="BonnetStuds" Index="15" IsNewNode="True" />
+                <LayoutItem Id="Material" ViewItem="Material" Index="16" IsNewNode="True" />
+                <LayoutItem Id="Size" ViewItem="Size" Index="17" IsNewNode="True" />
+                <LayoutItem Id="Connection" ViewItem="Connection" Index="18" IsNewNode="True" />
+                <LayoutItem Id="SeatDisc" ViewItem="SeatDisc" Index="19" IsNewNode="True" />
+                <LayoutItem Id="GuideRing" ViewItem="GuideRing" Index="20" IsNewNode="True" />
+                <LayoutItem Id="Spring" ViewItem="Spring" Index="21" IsNewNode="True" />
+                <LayoutItem Id="Bellows" ViewItem="Bellows" Index="22" IsNewNode="True" />
+                <LayoutItem Id="Nozzle" ViewItem="Nozzle" Index="23" IsNewNode="True" />
+                <LayoutItem Id="TrimOther" ViewItem="TrimOther" Index="24" IsNewNode="True" />
+                <LayoutItem Id="Lever" ViewItem="Lever" Index="25" IsNewNode="True" />
+                <LayoutItem Id="GAG" ViewItem="GAG" Index="26" IsNewNode="True" />
+                <LayoutItem Id="ACCOther" ViewItem="ACCOther" Index="27" IsNewNode="True" />
+                <LayoutItem Id="Code" ViewItem="Code" Index="28" IsNewNode="True" />
+                <LayoutItem Id="Fire" ViewItem="Fire" Index="29" IsNewNode="True" />
+                <LayoutItem Id="BASOther" ViewItem="BASOther" Index="30" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="PSV_col2" Index="1" ShowCaption="False" IsNewNode="True">
+                <LayoutItem Id="Fluid" ViewItem="Fluid" Index="0" IsNewNode="True" />
+                <LayoutItem Id="RequiredCapacity" ViewItem="RequiredCapacity" Index="1" IsNewNode="True" />
+                <LayoutItem Id="ValveCapacity" ViewItem="ValveCapacity" Index="2" IsNewNode="True" />
+                <LayoutItem Id="RequiredArea" ViewItem="RequiredArea" Index="3" IsNewNode="True" />
+                <LayoutItem Id="ValveArea" ViewItem="ValveArea" Index="4" IsNewNode="True" />
+                <LayoutItem Id="SGorMW" ViewItem="SGorMW" Index="5" IsNewNode="True" />
+                <LayoutItem Id="Viscosity" ViewItem="Viscosity" Index="6" IsNewNode="True" />
+                <LayoutItem Id="SpecificHeatRatio" ViewItem="SpecificHeatRatio" Index="7" IsNewNode="True" />
+                <LayoutItem Id="Compressibility" ViewItem="Compressibility" Index="8" IsNewNode="True" />
+                <LayoutItem Id="SteamQuality" ViewItem="SteamQuality" Index="9" IsNewNode="True" />
+                <LayoutItem Id="PercentFlashing" ViewItem="PercentFlashing" Index="10" IsNewNode="True" />
+                <LayoutItem Id="LatentHeatVap" ViewItem="LatentHeatVap" Index="11" IsNewNode="True" />
+                <LayoutItem Id="VaporPressure" ViewItem="VaporPressure" Index="12" IsNewNode="True" />
+                <LayoutItem Id="MaxBlowdown" ViewItem="MaxBlowdown" Index="13" IsNewNode="True" />
+                <LayoutItem Id="MinReseat" ViewItem="MinReseat" Index="14" IsNewNode="True" />
+                <LayoutItem Id="ValveCoefficient" ViewItem="ValveCoefficient" Index="15" IsNewNode="True" />
+                <LayoutItem Id="NormalPressure" ViewItem="NormalPressure" Index="16" IsNewNode="True" />
+                <LayoutItem Id="SpringSet" ViewItem="SpringSet" Index="17" IsNewNode="True" />
+                <LayoutItem Id="NormalTemperature" ViewItem="NormalTemperature" Index="18" IsNewNode="True" />
+                <LayoutItem Id="ReliefTemperature" ViewItem="ReliefTemperature" Index="19" IsNewNode="True" />
+                <LayoutItem Id="ConBackPressure" ViewItem="ConBackPressure" Index="20" IsNewNode="True" />
+                <LayoutItem Id="DevBackPressure" ViewItem="DevBackPressure" Index="21" IsNewNode="True" />
+                <LayoutItem Id="OverPressure" ViewItem="OverPressure" Index="22" IsNewNode="True" />
+                <LayoutItem Id="DateLastPMDone" ViewItem="DateLastPMDone" Index="23" IsNewNode="True" />
+                <LayoutItem Id="LastWorkOrderNumber" ViewItem="LastWorkOrderNumber" Index="24" IsNewNode="True" />
+                <LayoutItem Id="PMInterval" ViewItem="PMInterval" Index="25" IsNewNode="True" />
+                <LayoutItem Id="IntervalBasis" ViewItem="IntervalBasis" Index="26" IsNewNode="True" />
+                <LayoutItem Id="DateNextPMDue" ViewItem="DateNextPMDue" Index="27" IsNewNode="True" />
+                <LayoutItem Id="HasSpecSheet" ViewItem="HasSpecSheet" Index="28" IsNewNode="True" />
+                <LayoutItem Id="HasProcessCalc" ViewItem="HasProcessCalc" Index="29" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" Index="1" ShowCaption="False" IsNewNode="True">
+              <LayoutItem Id="Oid" ViewItem="Oid" Index="0" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Index="1" ShowCaption="False" IsNewNode="True">
+            <LayoutItem Id="Remarks" ViewItem="Remarks" Index="0" IsNewNode="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
   </Views>
 </Application>

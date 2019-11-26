@@ -1,30 +1,42 @@
-﻿using System;
-using System.Drawing;
-using System.IO;
-using System.Reflection;
+﻿//-----------------------------------------------------------------------
+// <copyright file="D:\Users\dlandry\Source\Repos\landrys-psv-manager\landrys_psv_manager.Win\XafSplashScreen.cs" company="David W. Landry III">
+//     Author: _**David Landry**_
+//     *Copyright (c) David W. Landry III. All rights reserved.*
+// </copyright>
+//-----------------------------------------------------------------------
 using DevExpress.ExpressApp.Win.Utils;
 using DevExpress.Skins;
 using DevExpress.Utils.Drawing;
 using DevExpress.Utils.Svg;
 using DevExpress.XtraSplashScreen;
+using System;
+using System.Drawing;
+using System.IO;
+using System.Reflection;
 
-namespace landrys_psv_manager.Win {
-    public partial class XafSplashScreen : SplashScreen {
-		private void LoadBlankLogo() {
+namespace landrys_psv_manager.Win
+{
+    public partial class XafSplashScreen : SplashScreen
+    {
+        private void LoadBlankLogo()
+        {
             Assembly assembly = Assembly.GetExecutingAssembly();
             string blankLogoResourceName = assembly.GetName().Name + ".Images.Logo.svg";
             Stream svgStream = assembly.GetManifestResourceStream(blankLogoResourceName);
-            if(svgStream != null) {
+            if (svgStream != null)
+            {
                 svgStream.Position = 0;
                 peLogo.SvgImage = SvgImage.FromStream(svgStream);
             }
         }
-        protected override void DrawContent(GraphicsCache graphicsCache, Skin skin) {
+        protected override void DrawContent(GraphicsCache graphicsCache, Skin skin)
+        {
             Rectangle bounds = ClientRectangle;
             bounds.Width--; bounds.Height--;
             graphicsCache.Graphics.DrawRectangle(graphicsCache.GetPen(Color.FromArgb(255, 87, 87, 87), 1), bounds);
         }
-        protected void UpdateLabelsPosition() {
+        protected void UpdateLabelsPosition()
+        {
             labelApplicationName.CalcBestSize();
             int newLeft = (Width - labelApplicationName.Width) / 2;
             labelApplicationName.Location = new Point(newLeft, labelApplicationName.Top);
@@ -32,25 +44,29 @@ namespace landrys_psv_manager.Win {
             newLeft = (Width - labelSubtitle.Width) / 2;
             labelSubtitle.Location = new Point(newLeft, labelSubtitle.Top);
         }
-        public XafSplashScreen() {
+        public XafSplashScreen()
+        {
             InitializeComponent();
-			LoadBlankLogo();
-            this.labelCopyright.Text = "Copyright © " + DateTime.Now.Year.ToString() + " Company Name" +  System.Environment.NewLine + "All rights reserved.";
+            //LoadBlankLogo();
+            this.labelCopyright.Text = "Copyright © " + DateTime.Now.Year.ToString() + " ReCon Engineering" + System.Environment.NewLine + "All rights reserved.";
             UpdateLabelsPosition();
         }
-        
+
         #region Overrides
 
-        public override void ProcessCommand(Enum cmd, object arg) {
+        public override void ProcessCommand(Enum cmd, object arg)
+        {
             base.ProcessCommand(cmd, arg);
-            if((UpdateSplashCommand)cmd == UpdateSplashCommand.Description) {
+            if ((UpdateSplashCommand)cmd == UpdateSplashCommand.Description)
+            {
                 labelStatus.Text = (string)arg;
             }
         }
-        
+
         #endregion
 
-        public enum SplashScreenCommand {
+        public enum SplashScreenCommand
+        {
         }
     }
 }
