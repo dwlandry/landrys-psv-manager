@@ -113,6 +113,10 @@
     <Reference Include="DevExpress.XtraNavBar.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.XtraPdfViewer.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraPdfViewer.v19.2.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.XtraPrinting.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -168,6 +172,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editors\PdfViewerPropertyEditor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WinModule.cs">
       <SubType>Component</SubType>
@@ -178,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\ExpressAppLogo.png" />
