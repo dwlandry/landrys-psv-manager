@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="D:\Users\dlandry\Source\Repos\landrys-psv-manager\landrys_psv_manager.Module\BusinessObjects\PSV\PSV.cs" company="David W. Landry III">
+// <copyright file="D:\Users\dlandry\source\repos\landrys-psv-manager\landrys_psv_manager.Module\BusinessObjects\PSV\PSV.cs" company="David W. Landry III">
 //     Author: _**David Landry**_
 //     *Copyright (c) David W. Landry III. All rights reserved.*
 // </copyright>
@@ -16,6 +16,7 @@ using landrys_psv_manager.Module.BusinessObjects.SiteInfo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -31,6 +32,11 @@ namespace landrys_psv_manager.Module.BusinessObjects.PSV
         public override void AfterConstruction() => base.AfterConstruction();
 
 
+        FileData sizingScenariosFile;
+        FileData testReportsFile;
+        FileData calculationFile;
+        FileData pidFile;
+        FileData specSheetFile;
         bool hasProcessCalc;
         bool hasSpecSheet;
         string remarks;
@@ -338,5 +344,67 @@ namespace landrys_psv_manager.Module.BusinessObjects.PSV
 
         [CaptionsForBoolValues("Yes", "No")]
         public bool HasProcessCalc { get => hasProcessCalc; set => SetPropertyValue(nameof(HasProcessCalc), ref hasProcessCalc, value); }
+
+        [VisibleInListView(false)]
+        [DevExpress.Xpo.Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never)]
+        public FileData SpecSheetFile
+        {
+            get => specSheetFile;
+            set => SetPropertyValue(nameof(SpecSheetFile), ref specSheetFile, value);
+        }
+
+        [VisibleInListView(false)]
+        [ModelDefault("PropertyEditor", "PdfViewerPropertyEditor")]
+        public FileData SpecSheet => SpecSheetFile;
+
+        [VisibleInListView(false)]
+        [XafDisplayName("P&ID File")]
+        [DevExpress.Xpo.Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never)]
+        public FileData PidFile
+        {
+            get => pidFile;
+            set => SetPropertyValue(nameof(PidFile), ref pidFile, value);
+        }
+
+        [VisibleInListView(false)]
+        [ModelDefault("PropertyEditor", "PdfViewerPropertyEditor")]
+        [XafDisplayName("P&ID")]
+        public FileData PID => pidFile;
+
+        [VisibleInListView(false)]
+        [DevExpress.Xpo.Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never)]
+        public FileData CalculationFile
+        {
+            get => calculationFile;
+            set => SetPropertyValue(nameof(CalculationFile), ref calculationFile, value);
+        }
+
+        [VisibleInListView(false)]
+        [ModelDefault("PropertyEditor", "PdfViewerPropertyEditor")]
+        public FileData Calculations => CalculationFile;
+
+        [VisibleInListView(false)]
+        [DevExpress.Xpo.Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never)]
+        public FileData TestReportsFile
+        {
+            get => testReportsFile;
+            set => SetPropertyValue(nameof(TestReportsFile), ref testReportsFile, value);
+        }
+
+        [VisibleInListView(false)]
+        [ModelDefault("PropertyEditor", "PdfViewerPropertyEditor")]
+        public FileData TestReports => TestReportsFile;
+
+        [VisibleInListView(false)]
+        [DevExpress.Xpo.Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never)]
+        public FileData SizingScenariosFile
+        {
+            get => sizingScenariosFile;
+            set => SetPropertyValue(nameof(SizingScenariosFile), ref sizingScenariosFile, value);
+        }
+
+        [VisibleInListView(false)]
+        [ModelDefault("PropertyEditor", "PdfViewerPropertyEditor")]
+        public FileData SizingScenarios => SizingScenariosFile;
     }
 }

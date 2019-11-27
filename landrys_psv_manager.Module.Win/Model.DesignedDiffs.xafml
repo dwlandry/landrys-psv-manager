@@ -1,2 +1,19 @@
-﻿<?xml version="1.0" ?>
-<Application />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="landrys_psv_manager.Module.BusinessObjects.PSV.PSV">
+      <OwnMembers>
+        <Member Name="Calculations" PropertyEditorType="landrys_psv_manager.Module.Win.Editors.PdfViewerPropertyEditor" />
+        <Member Name="PID" PropertyEditorType="landrys_psv_manager.Module.Win.Editors.PdfViewerPropertyEditor" />
+        <Member Name="SizingScenarios" PropertyEditorType="landrys_psv_manager.Module.Win.Editors.PdfViewerPropertyEditor" />
+        <Member Name="SpecSheet" PropertyEditorType="landrys_psv_manager.Module.Win.Editors.PdfViewerPropertyEditor" />
+        <Member Name="SpecSheetFile" PropertyEditorType="DevExpress.ExpressApp.FileAttachments.Win.FileDataPropertyEditor" />
+        <Member Name="TestReports" PropertyEditorType="landrys_psv_manager.Module.Win.Editors.PdfViewerPropertyEditor" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="19.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="19.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>

@@ -22,7 +22,7 @@ namespace landrys_psv_manager.Module.Win.Editors
     [PropertyEditor(typeof(FileData), false)]
     public class PdfViewerPropertyEditor : WinPropertyEditor
     {
-        protected PdfViewerPropertyEditor(Type objectType, IModelMemberViewItem model) : base(objectType, model) { }
+        public PdfViewerPropertyEditor(Type objectType, IModelMemberViewItem model) : base(objectType, model) { }
 
         public new PdfViewer Control => ((PdfViewer)base.Control);
 
